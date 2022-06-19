@@ -1,6 +1,7 @@
 var assert = require("assert"),
   webdriver = require("selenium-webdriver"),
   conf_file = process.argv[3] || "conf/single.conf.js";
+const { BN } = require('@polkadot/util');
 
 var caps = require("../" + conf_file).capabilities;
 
@@ -46,7 +47,9 @@ describe("Mocha Todo Test " + caps.browserName, function() {
   // });
 
   it("works?", function(){
-    assert.equal(1,1);
+    const one = new BN('1');
+    const two = new BN('1');
+    assert.equal(one.toString(),two.toString());
   })
 
   it("fails?", function(){
