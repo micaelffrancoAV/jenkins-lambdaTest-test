@@ -27,23 +27,31 @@ describe("Mocha Todo Test " + caps.browserName, function() {
     done();
   });
 
-  it("can find search results", function(done) {
-    driver.get("https://lambdatest.github.io/sample-todo-app/").then(function() {
-        driver.findElement(webdriver.By.name('li1')).click().then(function(){
-            console.log("Successfully clicked first list item.");
-        });
+  // it("can find search results", function(done) {
+  //   driver.get("https://lambdatest.github.io/sample-todo-app/").then(function() {
+  //       driver.findElement(webdriver.By.name('li1')).click().then(function(){
+  //           console.log("Successfully clicked first list item.");
+  //       });
 
-        driver.findElement(webdriver.By.name('li2')).click().then(function(){
-            console.log("Successfully clicked second list item.");
-          });
+  //       driver.findElement(webdriver.By.name('li2')).click().then(function(){
+  //           console.log("Successfully clicked second list item.");
+  //         });
 
-        driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n').then(function(){
-            driver.findElement(webdriver.By.id('addbutton')).click().then(function(){
-                console.log("Successfully added a new task.");
-            })
-        });
-    });
-  });
+  //       driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n').then(function(){
+  //           driver.findElement(webdriver.By.id('addbutton')).click().then(function(){
+  //               console.log("Successfully added a new task.");
+  //           })
+  //       });
+  //   });
+  // });
+
+  it("works?", function(){
+    assert.equal(1,1);
+  })
+
+  it("fails?", function(){
+    assert.equal(1,1);
+  })
 
   afterEach(function(done) {
     if (this.currentTest.isPassed()) {
