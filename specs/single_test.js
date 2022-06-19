@@ -53,7 +53,7 @@ describe("Mocha Todo Test " + caps.browserName, function() {
   })
 
   it("fails?", function(){
-    assert.equal(1,1);
+    assert.equal(1,2);
   })
 
   afterEach(function(done) {
