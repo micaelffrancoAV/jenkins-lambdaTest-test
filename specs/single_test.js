@@ -5,28 +5,28 @@ const { BN } = require('@polkadot/util');
 
 var caps = require("../" + conf_file).capabilities;
 
-var buildDriver = function(caps) {
-  return new webdriver.Builder()
-    .usingServer(
-      "http://" +
-      LT_USERNAME +
-      ":" +
-      LT_ACCESS_KEY +
-      "@hub.lambdatest.com/wd/hub"
-    )
-    .withCapabilities(caps)
-    .build();
-};
+// var buildDriver = function(caps) {
+//   return new webdriver.Builder()
+//     .usingServer(
+//       "http://" +
+//       LT_USERNAME +
+//       ":" +
+//       LT_ACCESS_KEY +
+//       "@hub.lambdatest.com/wd/hub"
+//     )
+//     .withCapabilities(caps)
+//     .build();
+// };
 
 describe("Mocha Todo Test " + caps.browserName, function() {
-  var driver;
-  this.timeout(0);
+  // var driver;
+  // this.timeout(0);
 
-  beforeEach(function(done) {
-    caps.name = this.currentTest.title;
-    driver = buildDriver(caps);
-    done();
-  });
+  // beforeEach(function(done) {
+  //   caps.name = this.currentTest.title;
+  //   driver = buildDriver(caps);
+  //   done();
+  // });
 
   // it("can find search results", function(done) {
   //   driver.get("https://lambdatest.github.io/sample-todo-app/").then(function() {
@@ -56,14 +56,14 @@ describe("Mocha Todo Test " + caps.browserName, function() {
     assert.equal(1,1);
   })
 
-  afterEach(function(done) {
-    if (this.currentTest.isPassed()) {
-      driver.executeScript("lambda-status=passed");
-    } else {
-      driver.executeScript("lambda-status=failed");
-    }
-    driver.quit().then(function() {
-      done();
-    });
-  });
+  // afterEach(function(done) {
+  //   if (this.currentTest.isPassed()) {
+  //     driver.executeScript("lambda-status=passed");
+  //   } else {
+  //     driver.executeScript("lambda-status=failed");
+  //   }
+  //   driver.quit().then(function() {
+  //     done();
+  //   });
+  // });
 });
